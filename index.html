@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LogicLink Controls</title>
+  <meta name="description" content="LogicLink Controls develops BACnet-capable controller hardware, backend services, and modern frontends for building automation and equipment control." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel2: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --border: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #1e3a8a 0%, var(--bg) 42%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      padding: 28px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(2, 6, 23, .55);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-size: 22px; font-weight: 800; letter-spacing: .3px; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 18px; font-size: 14px; }
+    .navlinks a { color: var(--muted); text-decoration: none; }
+    .hero { padding: 84px 20px 64px; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 34px; align-items: center; }
+    h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.02; margin: 0 0 22px; }
+    .lead { font-size: 20px; color: var(--muted); max-width: 720px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .badge { border: 1px solid var(--border); background: rgba(255,255,255,.06); padding: 9px 12px; border-radius: 999px; color: var(--muted); font-weight: 600; font-size: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035)); border: 1px solid var(--border); border-radius: 24px; padding: 26px; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
+    .status { display: grid; gap: 14px; }
+    .row { display: flex; justify-content: space-between; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+    .row:last-child { border-bottom: 0; }
+    .ok { color: var(--accent2); font-weight: 800; }
+    section { padding: 56px 20px; }
+    h2 { font-size: 34px; margin: 0 0 16px; }
+    .muted { color: var(--muted); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .feature { background: rgba(15,23,42,.72); border: 1px solid var(--border); border-radius: 22px; padding: 22px; }
+    .feature h3 { margin: 0 0 8px; font-size: 20px; }
+    .feature p { margin: 0; color: var(--muted); }
+    .callout { background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.28); border-radius: 24px; padding: 28px; }
+    footer { padding: 34px 20px; color: var(--muted); border-top: 1px solid var(--border); }
+    @media (max-width: 800px) {
+      .hero-grid, .grid3 { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      .hero { padding-top: 54px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">LogicLink<span>Controls</span></div>
+        <div class="navlinks">
+          <a href="#platform">Platform</a>
+          <a href="#hardware">Hardware</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Modern control systems for real equipment.</h1>
+          <p class="lead">LogicLink Controls is developing BACnet-capable controller hardware, backend services, and clean frontends for building automation, pool control, irrigation, and equipment integration.</p>
+          <div class="badges">
+            <div class="badge">BACnet-capable architecture</div>
+            <div class="badge">Local-first control</div>
+            <div class="badge">Python backend</div>
+            <div class="badge">Swift frontend</div>
+            <div class="badge">Secure remote access</div>
+          </div>
+        </div>
+        <div class="card status">
+          <div class="row"><span>Controller backend</span><span class="ok">Online</span></div>
+          <div class="row"><span>Priority-aware control</span><span class="ok">Ready</span></div>
+          <div class="row"><span>Remote access</span><span class="ok">Private</span></div>
+          <div class="row"><span>Public control access</span><span>Not exposed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform">
+      <div class="wrap">
+        <h2>Built like a controls platform, not a gadget.</h2>
+        <p class="muted">LogicLink is designed around a backend-authoritative model where controller state, point mapping, priority behavior, and frontend visibility all line up cleanly.</p>
+        <div class="grid3">
+          <div class="feature">
+            <h3>Backend authority</h3>
+            <p>Controller state is read from a structured backend instead of guessed from the UI.</p>
+          </div>
+          <div class="feature">
+            <h3>BACnet-aligned</h3>
+            <p>Priority, override, release, and point visibility follow real control-system behavior.</p>
+          </div>
+          <div class="feature">
+            <h3>Secure by design</h3>
+            <p>Public pages are informational. Control access stays private through authenticated remote access.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hardware">
+      <div class="wrap callout">
+        <h2>Hardware and runtime availability</h2>
+        <p class="muted">LogicLink controllers are currently being developed and tested on pre-configured hardware platforms with local runtime services, BACnet integration, and controller-specific logic.</p>
+        <p class="muted">Hardware is not publicly distributed at this time. Evaluation, integration, and early-access discussions are welcome.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Current focus</h2>
+        <div class="grid3">
+          <div class="feature">
+            <h3>Pool platform</h3>
+            <p>Local scheduling, pump control, BACnet visibility, and private remote monitoring.</p>
+          </div>
+          <div class="feature">
+            <h3>Irrigation integration</h3>
+            <p>Zone mapping, safe overrides, status visibility, and automation-system interoperability.</p>
+          </div>
+          <div class="feature">
+            <h3>Controller builder</h3>
+            <p>JSON-driven module definitions for repeatable LogicLink controller builds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap callout">
+        <h2>Contact</h2>
+        <p class="muted">For integration discussions, early access, or partnership inquiries, contact Steven Bailey / LogicLink Controls.</p>
+        <p><strong>logiclinkcontrols.com</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Copyright © 2026 Steven Bailey / LogicLink Controls. All rights reserved.</div>
+  </footer>
+</body>
+</html>
