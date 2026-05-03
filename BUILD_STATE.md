@@ -31,25 +31,57 @@
 
 ## Next
 
-1. Build private internal dashboard
-   - Links to pool controller
-   - Links to irrigation/controller devices
-   - Status-only first
-   - No public exposure
+# LogicalLink Controls — Build State
 
-2. Add friendly names
-   - Pool
-   - Irrigation
-   - Controller builder
-   - Gateway Pi
-   - Future LogicalLink devices
+## Current Status
+- Public site live (GitHub Pages + domain)
+- Private dashboard running on Pi (.7) via Tailscale
+- Controllers reachable:
+  - Pool Controller (.169)
+  - LL4TR4AO8UI (.5)
+  - LL8BO4AO16DI (.60)
+  - LL4BO4UI (.61, .62)
+- Sequent Microsystems review submitted
 
-3. Later
-   - Cloudflare contact/email relay
-   - Public site polish
-   - Favicon/logo
-   - Mobile refinements
-   - Better company copy
+---
+
+## Architecture
+- Public site = informational only (no control)
+- Private dashboard = control links (Tailscale only)
+- Controllers = BACnet + Python backend + web UI
+- Remote access = Tailscale VPN (no port forwarding)
+
+---
+
+## Next Steps (Short Term)
+- Add “Controllers” section to public site
+- Clean mobile layout (iPhone)
+- Standardize controller ports (8099 / 8081)
+- Improve dashboard labels
+
+---
+
+## Next Steps (Mid)
+- Demo/read-only controller pages (public)
+- Contact/email setup (Cloudflare later)
+- Clean screenshots for presentation
+- Prepare for Sequent follow-up
+
+---
+
+## Hardware Direction
+- Using Sequent HAT stack
+- Building BACnet-first controller platform
+- Future:
+  - Custom/OEM board
+  - LogicalLink hardware spec (LL boards)
+
+---
+
+## Notes
+- No public control endpoints
+- Local-first control is required
+- Remote = secure only (VPN)
 
 ## Rules
 
